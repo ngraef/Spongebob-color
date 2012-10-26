@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	/*min-height:900px !important;*/
+	min-height:100%;
+}
+
+#container {
+	min-height:100%;
+	width:100%;
+	/*background:-webkit-gradient(linear,center top,center bottom,from(#FBFE31),to(#fdff88)) no-repeat;*/
+	background: #fcee4d url(../images/sb_glasses.jpg) no-repeat;
+	background-position: -120px 0px;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+#wrapper {
+	width:865px;
+	background:white;
+	border:4px solid black;
+	border-radius:5px;
+	padding:10px;
+	margin:25px auto;
+}
+
+#canvasDiv {
+	margin:10px auto;
+	width:800px;
+}
+
+#canvas {
+	cursor:pointer;
+}
+
+#imageSelector {
+	margin:10px auto;
+	width:865px;
+	height:200px;
+	/*background:#FFC;*/
+	overflow:hidden;
+}
+
+.image {
+	position:relative;
+	float:left;
+	margin:0px 4px;
+	width:193px;
+	height:192px;
+	cursor:pointer;
+}
+
+.image img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:193px;
+	height:auto;
+	border-radius:30px;
+}
+
+.image img:hover {
+	background:#FFC;
+}

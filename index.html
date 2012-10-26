@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spongebob Squarepants Coloring Book</title>
+        <meta name="viewport" content="user-scalable=no" />
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/slider.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+        <script src="getimages.php"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/jquery.slider.js"></script>
+        
+        <script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-16890062-2']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+    </head>
+    <body>
+    <div id="container">
+    	<div id="wrapper">
+            <div id="imageSelector"><ul id="slider"></ul></div>
+            <div id="canvasDiv"></div>
+        </div>
+    </div>
+        <script type="text/javascript">
+			$(window).load(function()
+			{
+				setTimeout(function(){window.scrollTo( 0, 0 );}, 50);
+			});
+		
+            $(document).ready(function() { 
+				loadImages();
+				$(function(){
+					$('#slider').anythingSlider({
+						width: 800,
+						height: 200,
+						expand: false,
+						resizeContents: false,
+						showMultiple: 4,
+						theme: 'minimalist-round',
+						themeDirectory: './css/themes/theme-{themeName}.css',
+						buildNavigation: false,
+						autoPlay: false,
+					});
+				});
+				$('.image img').click(function(){
+					if (outlineImage.src.search($(this).attr('src').replace("/thumbs", "").replace(" ", "%20")) == -1){ //if src is different
+						clearDrawing();
+						outlineImage.src = $(this).attr('src').replace("/thumbs", "");
+					}
+				});
+				
+				prepareCanvas();
+			});
+        </script>
+        <script>
+			
+        </script>
+    </body>
+</html>
